@@ -32,6 +32,8 @@ namespace Hotpink
                         System.IO.Directory.CreateDirectory($@"{user}\Documents\SecretHotPinkFolder");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/cursor.cur"), $@"{user}\Documents\SecretHotPinkFolder\cursor.cur");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG"), $@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
+                        client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG"), $@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
+                        client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG"), $@"{user}\Documents\SecretHotPinkFolder\pink.PNG");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/load.ani"), $@"{user}\Documents\SecretHotPinkFolder\load.ani");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/hotpinkmono.wav"), $@"{user}\Documents\SecretHotPinkFolder\hotpinkmono.wav");
                     }
@@ -79,16 +81,15 @@ namespace Hotpink
             Thread.Sleep(3000);
 
             Thread.Sleep(1100);
-            Process.Start($@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
 
             Thread.Sleep(200);
-            Process.Start($@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
+            Process.Start($@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
             Thread.Sleep(200);
-            Process.Start($@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
+            Process.Start($@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
             Thread.Sleep(200);
-            Process.Start($@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
+            Process.Start($@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
             Thread.Sleep(200);
-            Process.Start($@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
+            Process.Start($@"{user}\Documents\SecretHotPinkFolder\pink.PNG");
 
 
 
