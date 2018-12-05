@@ -65,25 +65,40 @@ namespace Hotpink
             var path4 = $@"{user}\Documents\SecretHotPinkFolder\load.ani";
             key4?.SetValue("Wait", path4);
 
-            Thread.Sleep(1000);
+            Thread.Sleep(9800);
             Process.Start("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG");
-
-
             Thread.Sleep(5000);
-
             //New desktop background
             SystemParametersInfo(0x0014, 0, $@"{user}\Documents\SecretHotPinkFolder\Back.PNG", 0x0001);
-
-            Thread.Sleep(1000);
-
-            Thread.Sleep(1000);
 
             //Sets new sound on folder navigation
             var key2 = Registry.CurrentUser.CreateSubKey(@"AppEvents\Schemes\Apps\Explorer\Navigating\.Current");
             var path2 = $@"{user}\Documents\SecretHotPinkFolder\hotpinkmono.wav";
             key2?.SetValue("", path2);
 
-            Thread.Sleep(200000);
+            Thread.Sleep(3000);
+
+            Thread.Sleep(1100);
+            Process.Start($@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
+
+            Thread.Sleep(200);
+            Process.Start($@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
+            Thread.Sleep(200);
+            Process.Start($@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
+            Thread.Sleep(200);
+            Process.Start($@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
+            Thread.Sleep(200);
+            Process.Start($@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
+
+
+
+
+
+            Thread.Sleep(1000);
+
+            
+
+            Thread.Sleep(10000);
         }
     }
 }
