@@ -44,7 +44,8 @@ namespace Hotpink
 
             Thread.Sleep(1000);
 
-            SoundPlayer player = new SoundPlayer("hotpinkmono.wav");
+            //Plays audio from resource
+            SoundPlayer player = new SoundPlayer(Hotpink.Properties.Resources.hotpinkmono);
             player.Play();
 
             Thread.Sleep(1000);
@@ -68,7 +69,7 @@ namespace Hotpink
             Process.Start("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG");
 
 
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
 
             //New desktop background
             SystemParametersInfo(0x0014, 0, $@"{user}\Documents\SecretHotPinkFolder\Back.PNG", 0x0001);
