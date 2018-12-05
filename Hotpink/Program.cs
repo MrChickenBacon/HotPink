@@ -32,8 +32,8 @@ namespace Hotpink
                         System.IO.Directory.CreateDirectory($@"{user}\Documents\SecretHotPinkFolder");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/cursor.cur"), $@"{user}\Documents\SecretHotPinkFolder\cursor.cur");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG"), $@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
-                        client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG"), $@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
-                        client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG"), $@"{user}\Documents\SecretHotPinkFolder\pink.PNG");
+                        client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/hot.PNG"), $@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
+                        client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/pink.PNG"), $@"{user}\Documents\SecretHotPinkFolder\pink.PNG");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/load.ani"), $@"{user}\Documents\SecretHotPinkFolder\load.ani");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/hotpinkmono.wav"), $@"{user}\Documents\SecretHotPinkFolder\hotpinkmono.wav");
                     }
@@ -67,9 +67,9 @@ namespace Hotpink
             var path4 = $@"{user}\Documents\SecretHotPinkFolder\load.ani";
             key4?.SetValue("Wait", path4);
 
-            Thread.Sleep(9800);
+            Thread.Sleep(9300);
             Process.Start("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG");
-            Thread.Sleep(5000);
+            Thread.Sleep(5300);
             //New desktop background
             SystemParametersInfo(0x0014, 0, $@"{user}\Documents\SecretHotPinkFolder\Back.PNG", 0x0001);
 
@@ -78,17 +78,22 @@ namespace Hotpink
             var path2 = $@"{user}\Documents\SecretHotPinkFolder\hotpinkmono.wav";
             key2?.SetValue("", path2);
 
+            //Sets new sound on folder navigation
+            var key5 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Mouse");
+            key5?.SetValue("MouseTrails", "10");
+
             Thread.Sleep(3000);
 
             Thread.Sleep(1100);
 
-            Thread.Sleep(200);
+           
+            Thread.Sleep(190);
             Process.Start($@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
-            Thread.Sleep(200);
+            Thread.Sleep(190);
             Process.Start($@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
-            Thread.Sleep(200);
+            Thread.Sleep(190);
             Process.Start($@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
-            Thread.Sleep(200);
+            Thread.Sleep(100);
             Process.Start($@"{user}\Documents\SecretHotPinkFolder\pink.PNG");
 
 
@@ -99,7 +104,7 @@ namespace Hotpink
 
             
 
-            Thread.Sleep(10000);
+            Thread.Sleep(8000);
         }
     }
 }
