@@ -19,35 +19,35 @@ namespace Hotpink
             var user = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             using (WebClient client = new WebClient())
             {
-                client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/cursor.cur"), $@"{user}\Documents\cursor.cur");
-                client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG"), $@"{user}\Documents\Back.PNG");
-                client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/hotpink.wav"), $@"{user}\Documents\hotpink.wav");
+                System.IO.Directory.CreateDirectory($@"{user}\Documents\SecretHotPinkFolder");
+                client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/cursor.cur"), $@"{user}\Documents\SecretHotPinkFolder\cursor.cur");
+                client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG"), $@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
+                client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/hotpinkmono.wav"), $@"{user}\Documents\SecretHotPinkFolder\hotpinkmono.wav");
             }
 
-            Thread.Sleep(1000);
-
-            SoundPlayer player = new SoundPlayer("hotpink.wav");
+            SoundPlayer player = new SoundPlayer("hotpinkmono.wav");
             player.Play();
 
             Thread.Sleep(1000);
-
-            //Sets new cursor
-            var key1 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Cursors\Arrow");
-            var path1 = $@"{user}\Documents\cursor.cur";
-            key1?.SetValue("", path1);
-
+            
             Thread.Sleep(1000);
             Process.Start("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG");
 
+            //Sets new cursor
+            var key1 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Cursors");
+            var path1 = $@"{user}\Documents\SecretHotPinkFolder\cursor.cur";
+            key1?.SetValue("Arrow", path1);
+
             Thread.Sleep(1000);
-            SystemParametersInfo(0x0014, 0, $@"{user}\Documents\Back.PNG", 0x0001);
+            SystemParametersInfo(0x0014, 0, $@"{user}\Documents\SecretHotPinkFolder\Back.PNG", 0x0001);
 
-            
+            Thread.Sleep(1000);
 
+            Thread.Sleep(1000);
 
             //Sets new sound on folder navigation
             var key2 = Registry.CurrentUser.CreateSubKey(@"AppEvents\Schemes\Apps\Explorer\Navigating\.Current");
-            var path2 = $@"{user}\Documents\hotpink.wav";
+            var path2 = $@"{user}\Documents\SecretHotPinkFolder\hotpinkmono.wav";
             key2?.SetValue("", path2);
 
             Thread.Sleep(200000);
