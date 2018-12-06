@@ -53,23 +53,25 @@ namespace Hotpink
 
             Thread.Sleep(1000);
 
-            //Sets new cursor
-            var key1 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Cursors");
-            var path1 = $@"{user}\Documents\SecretHotPinkFolder\cursor.cur";
-            key1?.SetValue("Arrow", path1);
+            ////Sets new cursor
+            //var key1 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Cursors");
+            //var path1 = $@"{user}\Documents\SecretHotPinkFolder\cursor.cur";
+            //key1?.SetValue("Arrow", path1);
 
-            //Sets new cursor animation1
-            var key3 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Cursors");
-            var path3 = $@"{user}\Documents\SecretHotPinkFolder\load2.ani";
-            key3?.SetValue("AppStarting", path3);
+            ////Sets new cursor animation1
+            //var key3 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Cursors");
+            //var path3 = $@"{user}\Documents\SecretHotPinkFolder\load2.ani";
+            //key3?.SetValue("AppStarting", path3);
 
-            //Sets new cursor animation2
-            var key4 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Cursors");
-            var path4 = $@"{user}\Documents\SecretHotPinkFolder\load2.ani";
-            key4?.SetValue("Wait", path4);
+            ////Sets new cursor animation2
+            //var key4 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Cursors");
+            //var path4 = $@"{user}\Documents\SecretHotPinkFolder\load2.ani";
+            //key4?.SetValue("Wait", path4);
 
-            ////Enable startup sound
-            //var key7 = Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation");
+            //TODO changes Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation instead :(
+            //https://social.msdn.microsoft.com/Forums/en-US/e27b9ea5-a159-4f37-bab8-8aece1e4429b/reading-dword-value-from-a-registry-key?forum=Vsexpressvcs
+            //Enable startup sound
+            //var key7 = Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation", true);
             //var path7 = "0";
             //key7?.SetValue("DisableStartupSound", path7, RegistryValueKind.DWord);
 
