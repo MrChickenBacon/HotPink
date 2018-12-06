@@ -34,7 +34,7 @@ namespace Hotpink
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG"), $@"{user}\Documents\SecretHotPinkFolder\Back.PNG");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/hot.PNG"), $@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/pink.PNG"), $@"{user}\Documents\SecretHotPinkFolder\pink.PNG");
-                        client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/load.ani"), $@"{user}\Documents\SecretHotPinkFolder\load.ani");
+                        client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/load2.ani"), $@"{user}\Documents\SecretHotPinkFolder\load2.ani");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/hotpinkmono.wav"), $@"{user}\Documents\SecretHotPinkFolder\hotpinkmono.wav");
                     }
                 }
@@ -59,12 +59,12 @@ namespace Hotpink
 
             //Sets new cursor animation1
             var key3 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Cursors");
-            var path3 = $@"{user}\Documents\SecretHotPinkFolder\load.ani";
+            var path3 = $@"{user}\Documents\SecretHotPinkFolder\load2.ani";
             key3?.SetValue("AppStarting", path3);
 
             //Sets new cursor animation2
             var key4 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Cursors");
-            var path4 = $@"{user}\Documents\SecretHotPinkFolder\load.ani";
+            var path4 = $@"{user}\Documents\SecretHotPinkFolder\load2.ani";
             key4?.SetValue("Wait", path4);
 
             Thread.Sleep(9300);
