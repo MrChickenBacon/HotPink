@@ -35,6 +35,7 @@ namespace Hotpink
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/hot.PNG"), $@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/pink.PNG"), $@"{user}\Documents\SecretHotPinkFolder\pink.PNG");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/load2.ani"), $@"{user}\Documents\SecretHotPinkFolder\load2.ani");
+                        client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/startup.wav"), $@"{user}\Documents\SecretHotPinkFolder\startup.wav");
                         client.DownloadFile(new Uri("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/hotpinkmono.wav"), $@"{user}\Documents\SecretHotPinkFolder\hotpinkmono.wav");
                     }
                 }
@@ -67,6 +68,21 @@ namespace Hotpink
             var path4 = $@"{user}\Documents\SecretHotPinkFolder\load2.ani";
             key4?.SetValue("Wait", path4);
 
+            //Sets custom startupsound to be avaiable
+            var key6 = Registry.CurrentUser.CreateSubKey(@"AppEvents\EventLabels\WindowsLogon");
+            var path6 = "0";
+            key6?.SetValue("ExcludeFromCPL", path6);
+
+            //Enable startup sound
+            var key7 = Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation");
+            var path7 = "0";
+            key7?.SetValue("DisableStartupSound", path7);
+
+            //Sets new logon sound
+            var key5 = Registry.CurrentUser.CreateSubKey(@"AppEvents\Schemes\Apps\.Default\WindowsLogon\.Current");
+            var path5 = $@"{user}\Documents\SecretHotPinkFolder\startup.wav";
+            key5?.SetValue("", path5);
+
             Thread.Sleep(9300);
             Process.Start("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG");
             Thread.Sleep(5300);
@@ -79,8 +95,8 @@ namespace Hotpink
             key2?.SetValue("", path2);
 
             //Sets new sound on folder navigation
-            var key5 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Mouse");
-            key5?.SetValue("MouseTrails", "10");
+            var key8 = Registry.CurrentUser.CreateSubKey(@"Control Panel\Mouse");
+            key8?.SetValue("MouseTrails", "10");
 
             Thread.Sleep(3000);
 
