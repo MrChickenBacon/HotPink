@@ -71,17 +71,17 @@ namespace Hotpink
             ////Enable startup sound
             //var key7 = Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation", true);
             //var path7 = "0";
-            //key7?.SetValue("DisableStartupSound", path7, RegistryValueKind.DWord);
+            //key7.SetValue("DisableStartupSound", path7, RegistryValueKind.DWord);
 
             ////Sets custom startupsound to be avaiable
             //var key6 = Registry.CurrentUser.CreateSubKey(@"AppEvents\EventLabels\WindowsLogon");
             //var path6 = "0";
-            //key6?.SetValue("ExcludeFromCPL", path6);
+            //key6.SetValue("ExcludeFromCPL", path6);
 
             ////Sets new logon sound
             //var key5 = Registry.CurrentUser.CreateSubKey(@"AppEvents\Schemes\Apps\.Default\WindowsLogon\.Current");
             //var path5 = $@"{user}\Documents\SecretHotPinkFolder\startup.wav";
-            //key5?.SetValue("", path5);
+            //key5.SetValue("", path5);
 
             Thread.Sleep(9300);
             Process.Start("https://github.com/MrChickenBacon/HotPink/raw/master/Hotpink/Back.PNG");
@@ -101,7 +101,6 @@ namespace Hotpink
             Thread.Sleep(3000);
 
             Thread.Sleep(1100);
-
 
             Thread.Sleep(190);
             Process.Start($@"{user}\Documents\SecretHotPinkFolder\hot.PNG");
